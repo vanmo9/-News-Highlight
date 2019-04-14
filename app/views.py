@@ -55,3 +55,22 @@ def search(news_name):
     search_news = search_news(search_news_format)
     title = f'search results for {news_name}'
     return render_template('search.html',news = searched_news)
+
+
+
+@app.route('/news/review/new/<int:id>', methods = ['GET','POST'])
+def new_review(id):
+    form = ReviewForm()
+    news = get_news(id)
+
+
+    if form.validate_on_submit():
+        title = form.title.data
+        review = form.review.data
+        new_review = Review(news.id,title,news.poster,review)
+        new_review.save_review()
+        return redirect(url_for('news',id = news.id ))
+
+    title = f'{news.title} review'
+    return render_template('new_review.html',title = title, review_form=form, news=news)
+    
