@@ -40,8 +40,10 @@ def news(id):
 
     news = get_news(id)
     title = f'{news.title}'
+    review = Review.get_reviews(movie.id)
 
-    return render_template('news.html', title = title, news = news)
+
+    return render_template('news.html', title = title, news = news, reviews = review)
 
 
 @app.route('/search/<news_name>')
@@ -73,4 +75,3 @@ def new_review(id):
 
     title = f'{news.title} review'
     return render_template('new_review.html',title = title, review_form=form, news=news)
-    
