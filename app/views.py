@@ -1,6 +1,9 @@
 from flask import render_template,request,redirect,url_for
 from app import app
 from .request import get_newss,get_news,search_news
+from .models import review
+from .forms import ReviewForm
+Review = review.Review
 
 ## Views
 @app.route('/')
@@ -14,8 +17,16 @@ def index():
     popular_newss = get_newss('popular')
     upcoming_news = get_newss('upcoming')
     now_showing_news = get_newss('now_showing_news')
+
+
     title = 'python the language'
-    return render_template('index.html', title = title,popular = popular_newss,  upcoming = upcoming_news, now_showing = now_showing_news)
+
+    search_news = request.args.get('news_query')
+
+    if search_news:
+        return redirect(url_for('search',news_name=search_news))
+    else:
+        return render_template('index.html', title = title,popular = popular_newss,  upcoming = upcoming_news, now_showing = now_showing_news)
 
 
 
