@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import render_template,request,redirect,url_for
 from app import app
 from .request import get_newss,get_news,search_news
 
@@ -44,4 +44,3 @@ def search(news_name):
     search_news = search_news(search_news_format)
     title = f'search results for {news_name}'
     return render_template('search.html',news = searched_news)
-       
