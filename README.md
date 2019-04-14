@@ -8,7 +8,7 @@ This is a python web application that allows users to get the latest news. By us
 
 ## Project Description
 
-    This is web application that allows users to create users get latest news
+    This is web application that allows users users to  get latest news. It also easy to use and can save you alot of time because all kind of news is available
 
 ## Project setup  installation
 
