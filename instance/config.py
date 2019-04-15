@@ -1,0 +1,2 @@
+NEWS_API_KEY = '0df61f5f5eff4c6794d6e0f938c9d3b8'
+SECRET_KEY = 'moha'
