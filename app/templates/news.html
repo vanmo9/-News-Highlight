@@ -8,17 +8,7 @@
     <!-- Poster background -->
     <div class="row">
 
-        <h1>Reviews</h1>
-        <hr>
-
-        {% if reviews %}
-            {{macro.displayReviews(reviews)}}
-
-        {% else%}
-            <h3 class="text-center">This news has no reviews </h3>
-
-            <a class="btn btn-success btn-lg text-center" href="/news/review/new/{{news.id}}"> Write a new review</a>
-        {% endif %}
+    {{macro.displayArticleList(q)}}
 
     </div>
 

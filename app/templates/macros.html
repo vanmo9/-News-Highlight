@@ -11,3 +11,21 @@
 {% endfor %}
 
 {% endmacro %}
+
+{% macro displayArticleList(article_list) %}
+
+
+
+{% for x in article_list %}
+
+ <h2>{{x.author}}</h2>
+ <h2>{{x.title}}</h2>
+ <h2>{{x.description}}</h2>
+ <h2>{{x.url}}</h2>
+ <h2>{{x.urlToImage}}</h2>
+ <h2>{{x.publishedAt}}</h2>
+ <h2>{{x.content}}</h2>
+
+{% endfor %}
+
+{% endmacro %}
